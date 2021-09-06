@@ -13,12 +13,11 @@ public class guestCheckoutUsingDirectBankTransfer extends BaseTest {
     @Test
     public void guestCheckoutUsingDirectBankTransfer() throws InterruptedException {
 
-        driver.get("https://askomdch.com/");
+        StorePage storePage=new HomePage(driver)
+                .load()
+                .navigateToStoreUsingMenu()
+                .search("Blue");
 
-        HomePage homePage=new HomePage(driver);
-        StorePage storePage= homePage.navigateToStoreUsingMenu();
-
-        storePage.search("Blue");
         Assert.assertEquals(storePage.getTitle(),"Search results: “Blue”");
         storePage.getTitle();
         storePage.clickAddtoCartBtn("Blue Shoes");

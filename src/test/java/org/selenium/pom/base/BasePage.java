@@ -9,5 +9,9 @@ public class BasePage {
         this.driver=driver;
     }
 
+    public void load(String endpoint){
+        driver.get("https://askomdch.com"+endpoint);
+
+    }
 
 }

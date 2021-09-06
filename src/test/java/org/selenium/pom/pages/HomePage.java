@@ -6,12 +6,14 @@ import org.selenium.pom.base.BasePage;
 
 public class HomePage extends BasePage {
 
-  private final  By storeMenuLink = By.cssSelector("#menu-item-1227 > a");
+    private final  By storeMenuLink = By.cssSelector("#menu-item-1227 > a");
 
-
-    public HomePage(WebDriver driver) {
+  public HomePage(WebDriver driver) {
         super(driver);
     }
+
+    public HomePage load(){load("/"); return this;}
+
 
 public StorePage navigateToStoreUsingMenu(){
 driver.findElement(storeMenuLink).click();
